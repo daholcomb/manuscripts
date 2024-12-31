@@ -1,3 +1,5 @@
+<br />
+
 # [Estimating Household Fecal Contamination Associations with Enteric Pathogens in Child Stool](https://daholcomb.github.io/manuscripts/mapsan_mst)
 
 **R** code and data to conduct the analysis of household fecal marker associations with enteric pathogens and child diarrhea described in:
