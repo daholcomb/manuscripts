@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="David A Holcomb">
-<meta name="dcterms.date" content="2024-12-31">
+<meta name="dcterms.date" content="2025-04-15">
 
 <title>Estimating Household Fecal Contamination Associations with Enteric Pathogens in Child Stool</title>
 <style>
@@ -3060,7 +3060,7 @@ vertical-align: -.125em;
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Estimating Household Fecal Contamination Associations with Enteric Pathogens in Child Stool</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Version 1.0</p>
+<p class="subtitle lead">Version 1.1</p>
 </div>
 
 
@@ -3077,7 +3077,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 31, 2024</p>
+      <p class="date">April 15, 2025</p>
     </div>
   </div>
   
@@ -3091,7 +3091,7 @@ vertical-align: -.125em;
 <h1>Description</h1>
 <p>This report provides <strong>R</strong> code to conduct the analysis of household fecal marker associations with enteric pathogens and child diarrhea described in:</p>
 <blockquote class="blockquote">
-<p>Holcomb DA, Knee J, Adriano Z, Capone D, Cumming O, Kowalsky E, Nalá R, Viegas E, Stewart JR, Brown J. (2024). Associations between fecal contamination of the household environment and enteric pathogen detection in children living in Maputo, Mozambique. <em>Submitted for publication</em>.</p>
+<p>Holcomb DA, Knee J, Adriano Z, Capone D, Cumming O, Kowalsky E, Nalá R, Viegas E, Stewart JR, Brown J. (2025). Associations between fecal contamination of the household environment and enteric pathogen detection in children living in Maputo, Mozambique. <em>Environment &amp; Health</em>. <a href="https://doi.org/10.1021/envhealth.4c00283">https://doi.org/10.1021/envhealth.4c00283</a></p>
 </blockquote>
 <p>A companion <strong>R</strong> script, <a href="https://daholcomb.github.io/manuscripts/mapsan_mst/bgcomp_funcs.R"><code>bgcomp_funcs.R</code></a>, abstracts the functions developed in this analysis to simultaneously estimate individual and pooled associations of a single predictor with multiple binary outcomes, using marginal standardization to obtain prevalence ratio and prevalence difference estimates. It can be sourced into an <strong>R</strong> session to make the functions available in the global environment for use. The accompanying dataset, <a href="https://daholcomb.github.io/manuscripts/mapsan_mst/data_mst_gpp.xlsx"><code>data_mst_gpp.xlsx</code></a>, is provided to enable replicating this analysis and includes a variable codebook. All files are available in the manuscript <a href="https://daholcomb.github.io/manuscripts/mapsan_mst/">repository</a>.</p>
 <p><strong>Setup</strong></p>
@@ -4251,11 +4251,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Estimating Household Fecal Contamination Associations with Enteric Pathogens in Child Stool&quot;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-12-31</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2025-04-15</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: David A Holcomb</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">    orcid: 0000-0003-4055-7164</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> Version 1.0</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> Version 1.1</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> numbered-bracket.csl</span></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co">  </span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
@@ -4281,7 +4281,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>This report provides **R** code to conduct the analysis of household fecal marker associations with enteric pathogens and child diarrhea described in:</span>
 <span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Holcomb DA, Knee J, Adriano Z, Capone D, Cumming O, Kowalsky E, Nalá R, Viegas E, Stewart JR, Brown J. (2024). Associations between fecal contamination of the household environment and enteric pathogen detection in children living in Maputo, Mozambique. *Submitted for publication*.</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Holcomb DA, Knee J, Adriano Z, Capone D, Cumming O, Kowalsky E, Nalá R, Viegas E, Stewart JR, Brown J. (2025). Associations between fecal contamination of the household environment and enteric pathogen detection in children living in Maputo, Mozambique. *Environment &amp; Health*. </span><span class="co">[</span><span class="ot">https://doi.org/10.1021/envhealth.4c00283</span><span class="co">](https://doi.org/10.1021/envhealth.4c00283)</span></span>
 <span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>A companion **R** script, [`bgcomp_funcs.R`](https://daholcomb.github.io/manuscripts/mapsan_mst/bgcomp_funcs.R), abstracts the functions developed in this analysis to simultaneously estimate individual and pooled associations of a single predictor with multiple binary outcomes, using marginal standardization to obtain prevalence ratio and prevalence difference estimates. It can be sourced into an **R** session to make the functions available in the global environment for use. The accompanying dataset, <span class="co">[</span><span class="ot">`data_mst_gpp.xlsx`</span><span class="co">](https://daholcomb.github.io/manuscripts/mapsan_mst/data_mst_gpp.xlsx)</span>, is provided to enable replicating this analysis and includes a variable codebook. All files are available in the manuscript <span class="co">[</span><span class="ot">repository</span><span class="co">](https://daholcomb.github.io/manuscripts/mapsan_mst/)</span>.</span>
